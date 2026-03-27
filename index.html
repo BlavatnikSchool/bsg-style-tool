@@ -19,6 +19,7 @@
   --border:#C8D0DA;
   --border-light:#DDE3EA;
   --white:#ffffff;
+  --orange:#FF9600;
   --font:'Open Sans',Arial,sans-serif;
 }
 body{font-family:var(--font);background:var(--light);color:var(--navy);min-height:100vh}
@@ -34,7 +35,7 @@ header{background:var(--navy);color:var(--white);padding:0 32px;display:flex;ali
 .tab-bar{background:var(--navy-light);display:flex;padding:0 32px;gap:0}
 .tab-btn{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;padding:13px 22px;background:none;border:none;color:rgba(255,255,255,.5);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;transition:all .15s;font-family:var(--font)}
 .tab-btn:hover{color:rgba(255,255,255,.8)}
-.tab-btn.active{color:var(--white);border-bottom-color:var(--blue-light)}
+.tab-btn.active{color:var(--white);border-bottom-color:var(--orange)}
 
 /* Panels */
 .panel{display:none;max-width:900px;margin:0 auto;padding:36px 28px}
@@ -187,8 +188,9 @@ header{background:var(--navy);color:var(--white);padding:0 32px;display:flex;ali
 </header>
 
 <div class="tab-bar">
-  <button class="tab-btn active" id="tab-checker" onclick="switchTab('checker',this)">&#9654; Style Checker</button>
-  <button class="tab-btn" id="tab-chat" onclick="switchTab('chat',this)">&#9679; Ask the Style Guide</button>
+  <button class="tab-btn active" id="tab-checker" onclick="switchTab('checker',this)">Style Checker</button>
+  <button class="tab-btn" id="tab-chat" onclick="switchTab('chat',this)">Ask the Style Guide</button>
+  <button class="tab-btn" onclick="window.open('https://forms.cloud.microsoft/e/BFmnAvyFSS','_blank')" style="margin-left:auto">Was this useful?</button>
 </div>
 
 <!-- ═══ CHECKER PANEL ═══ -->
@@ -196,7 +198,7 @@ header{background:var(--navy);color:var(--white);padding:0 32px;display:flex;ali
   <div class="intro">
     <p style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--white);background:var(--blue);padding:4px 10px;margin-bottom:14px">Beta</p>
     <p>Upload a policy paper, academic paper, or report and receive a structured style review against <em>Oxford University house style</em>. Issues are flagged by category and priority — no changes are made to your document.</p>
-    <p style="font-size:13px;color:var(--mid);margin-bottom:8px">This tool is in beta. Results are a guide only and should always be checked against the full style guides: <a href="https://www.ox.ac.uk/public-affairs/style-guide" target="_blank" style="color:var(--blue);text-decoration:underline">Oxford University Style Guide</a> and the <a href="https://unioxfordnexus.sharepoint.com/:b:/r/sites/BSOG-HUB-BlavatnikSchoolofGovernment/Logos%20templates%20and%20guidelines%202025/Blavatnik%20School%20Written%20Style%20Guide%202025.pdf?csf=1&web=1&e=MeRAfP" target="_blank" style="color:var(--blue);text-decoration:underline">Blavatnik School Written Style Guide 2025</a> (Oxford login required). &nbsp;·&nbsp; <a href="https://forms.cloud.microsoft/e/BFmnAvyFSS" target="_blank" style="color:var(--blue);text-decoration:underline">Was this useful? Let us know</a>.</p>
+    <p style="font-size:13px;color:var(--mid);margin-bottom:8px">This tool is in beta. Results are a guide only and should always be checked against the full style guides: <a href="https://www.ox.ac.uk/public-affairs/style-guide" target="_blank" style="color:var(--blue);text-decoration:underline">Oxford University Style Guide</a> and the <a href="https://unioxfordnexus.sharepoint.com/:b:/r/sites/BSOG-HUB-BlavatnikSchoolofGovernment/Logos%20templates%20and%20guidelines%202025/Blavatnik%20School%20Written%20Style%20Guide%202025.pdf?csf=1&web=1&e=MeRAfP" target="_blank" style="color:var(--blue);text-decoration:underline">Blavatnik School Written Style Guide 2025</a> (Oxford login required). Please do not upload documents containing sensitive or personal information — while your files are not stored anywhere, passing such content to an external API is not best practice.</p>
     <p style="font-size:13px;color:var(--mid);margin-bottom:28px">Accepts .docx or .txt up to 10 MB. Documents up to approximately 6,000 words are checked in full. Longer documents will be partially checked — the word count is shown on upload.</p>
   </div>
 
@@ -241,7 +243,7 @@ header{background:var(--navy);color:var(--white);padding:0 32px;display:flex;ali
 <div class="panel" id="panel-chat">
   <div class="intro">
     <p>Ask anything about <em>BSG house style</em> or the underlying Oxford University Style Guide — school name usage, terminology, capitalisation, punctuation, dates, referencing, list formatting, and more. The BSG Written Style Guide (2025) is already loaded. You can also upload additional BSG style notes below.</p>
-    <p style="font-size:13px;color:var(--mid);margin-top:-16px;margin-bottom:28px">This tool is in beta. Answers should always be verified against the <a href="https://www.ox.ac.uk/public-affairs/style-guide" target="_blank" style="color:var(--blue);text-decoration:underline">Oxford University Style Guide</a> and the <a href="https://unioxfordnexus.sharepoint.com/:b:/r/sites/BSOG-HUB-BlavatnikSchoolofGovernment/Logos%20templates%20and%20guidelines%202025/Blavatnik%20School%20Written%20Style%20Guide%202025.pdf?csf=1&web=1&e=MeRAfP" target="_blank" style="color:var(--blue);text-decoration:underline">Blavatnik School Written Style Guide 2025</a> (Oxford login required). &nbsp;·&nbsp; <a href="https://forms.cloud.microsoft/e/BFmnAvyFSS" target="_blank" style="color:var(--blue);text-decoration:underline">Was this useful? Let us know</a>.</p>
+    <p style="font-size:13px;color:var(--mid);margin-top:-16px;margin-bottom:28px">This tool is in beta. Answers should always be verified against the <a href="https://www.ox.ac.uk/public-affairs/style-guide" target="_blank" style="color:var(--blue);text-decoration:underline">Oxford University Style Guide</a> and the <a href="https://unioxfordnexus.sharepoint.com/:b:/r/sites/BSOG-HUB-BlavatnikSchoolofGovernment/Logos%20templates%20and%20guidelines%202025/Blavatnik%20School%20Written%20Style%20Guide%202025.pdf?csf=1&web=1&e=MeRAfP" target="_blank" style="color:var(--blue);text-decoration:underline">Blavatnik School Written Style Guide 2025</a> (Oxford login required).</p>
   </div>
 
   <div class="chat-layout">
@@ -260,6 +262,7 @@ header{background:var(--navy);color:var(--white);padding:0 32px;display:flex;ali
       </div>
 
       <div>
+        <!-- Additional style notes upload — commented out for now
         <span class="sidebar-upload-label">Additional style notes</span>
         <div class="guide-loaded-box" id="guide-loaded-box">
           <span class="guide-name" id="guide-file-name"></span>
@@ -273,6 +276,7 @@ header{background:var(--navy);color:var(--white);padding:0 32px;display:flex;ali
           </div>
           <p class="sidebar-note">BSG style guide (2025) already loaded. Upload further notes to layer on top.</p>
         </div>
+        -->
       </div>
 
     </div>
