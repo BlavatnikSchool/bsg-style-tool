@@ -687,7 +687,7 @@ async function runAnalysis() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-6',
+        model: '-sonnet-4-6',
         max_tokens: 1000,
         system: sys,
         messages: [{ role: 'user', content: `Check this ${currentDocType}:\n\n${text.slice(0, 40000)}` }]
@@ -861,7 +861,7 @@ async function sendMessage() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-6',
+        model: '-sonnet-4-6',
         max_tokens: 1000,
         system: sys,
         messages: chatHistory
@@ -966,7 +966,7 @@ async function slGenerate() {
   const btn = document.getElementById('sl-generate-btn');
   btn.disabled = true;
   btn.textContent = 'Generating…';
-  slStatus('info', 'Sending to Claude – this may take 10–20 seconds…');
+  slStatus('info', 'Sending to  – this may take 10–20 seconds…');
 
   const typeLabels = {
     research: 'academic research or policy presentation',
@@ -1015,7 +1015,7 @@ Generate the slide structure as JSON.`;
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-6',
+        model: '-sonnet-4-6',
         max_tokens: 4000,
         system: systemPrompt,
         messages: [{ role: 'user', content: userPrompt }]
